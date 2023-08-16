@@ -25,7 +25,6 @@ class Solution:
                 traverse(root.right,l1)
         traverse(root1,l1)
         traverse(root2,l2)
-        print(l1,l2)
 
         if len(l1) == len(l2):
             for i in range(len(l1)):
