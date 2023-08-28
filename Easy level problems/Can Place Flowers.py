@@ -11,7 +11,7 @@
 # Input: flowerbed = [1,0,0,0,1], n = 1
 # Output: true
 
-# SOLUTION:
+# SOLUTION:  
 
 class Solution:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
