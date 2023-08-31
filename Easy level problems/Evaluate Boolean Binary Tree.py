@@ -13,7 +13,7 @@
 # A full binary tree is a binary tree where each node has either 0 or 2 children.
 
 # A leaf node is a node that has zero children.
-
+ 
 # Example:
 
 # Input: root = [2,1,3,null,null,0,1]
