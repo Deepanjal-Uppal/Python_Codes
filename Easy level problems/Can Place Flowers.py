@@ -7,7 +7,7 @@
 # return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.
 
 # Example:
-
+ 
 # Input: flowerbed = [1,0,0,0,1], n = 1
 # Output: true
 
