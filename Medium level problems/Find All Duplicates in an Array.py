@@ -15,12 +15,14 @@
 class Solution:
     def findDuplicates(self, nums: List[int]) -> List[int]:
 
-        d = Counter(nums)
-        li = []
+       res = []
+
+        for i in range(len(nums)):
+            pos = abs(nums[i]) - 1
+
+            if nums[pos] < 0:
+                res.append(abs(nums[i]))
+            else:
+                nums[pos] = nums[pos] * (-1)
         
-        for i in d:
-            if d[i] > 1:
-                li.append(i)
-        
-        return li
-        
+        return res
