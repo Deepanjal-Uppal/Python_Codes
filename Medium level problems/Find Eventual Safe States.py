@@ -22,29 +22,21 @@
 
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
-        incoming = [[] for _ in range(len(graph))]
-        indegree_list = [0]*len(graph)
+        safe = {}
 
-        for i in range(len(graph)):
-            for j in graph[i]:
-                incoming[j].append(i)
-                indegree_list[i] +=1
+        def dfs(i):
+            if i in safe:
+                return safe[i]
+            safe[i] = False
+            for nei in graph[i]:
+                if not dfs(nei):  #neighbor is not safe
+                    return safe[nei]  #return false
+            safe[i] = True  #i is safe
+            return safe[i]  #return true
 
+            
         res = []
-        queue = deque()
-
         for i in range(len(graph)):
-            if len(graph[i]) == 0:
-                queue.append(i)
-
-        while queue:
-            node = queue.popleft()
-            res.append(node)
-
-            for i in incoming[node]:
-                indegree_list[i] -= 1
-                if indegree_list[i] == 0:
-                    queue.append(i)
-
-        res.sort()
+            if dfs(i):  # i is safe
+                res.append(i)
         return res
